@@ -1,9 +1,10 @@
 'use strict'
 
-import { unimplemented } from './utils'
+import { typeclass, required } from './typeclass'
 
-const functor = () => ({
-    fmap: () => unimplemented('functor#fmap')
-})
+const functor = () => 
+    typeclass('Functor', {
+        fmap: required
+    })
 
 export default functor
