@@ -19,3 +19,8 @@ export const right = val => Object.assign({}, EitherClass(val), {
     fmap: f => right(f(val)),
     fail: () => right(val)
 })
+
+export const either =
+    (fallback, val) => val == null
+    ? left(fallback)
+    : right(val)
